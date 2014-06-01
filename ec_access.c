@@ -107,9 +107,9 @@ void parse_opts(int argc, char *argv[])
 			usage(argv[0], EXIT_FAILURE);
 		}
 		if (write_value < 0 ||
-		    write_value >= 255) {
-			fprintf(stderr, "Wrong byte offset 0x%.2x, valid:"
-				"[0-0xff]\n", write_byte_offset);
+		    write_value > 255) {
+			fprintf(stderr, "Wrong value 0x%.2x, valid:"
+				"[0-0xff]\n", write_value);
 			usage(argv[0], EXIT_FAILURE);
 		}
 	}
